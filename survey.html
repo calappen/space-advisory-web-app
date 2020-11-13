@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-sZG5VVk41YqhJjYXgJFoRVd3d2AdDgy4oyIytQJMGx/Mizz1N+5bgKQBSCGfKQnP" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Space Advisory Web App</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="info.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body onload="start()">
+    <div
+    <header>
+      <a href="home.html"><h1>Export Controls for the Commercial Space Industry</h1></a>
+    </header>
+    <main class="mainLayout">
+      <div class="sidebar">
+        <div class="card text-white bg-primary mb-3" style="padding: 1px;">
+          <a href="glossary.html" id="glossaryLink"><h4 class="card-header text-center">Glossary</h4></a>
+          <input type="text" class="form-control" id="myInput" onkeyup="searchList()" placeholder="Search for terms.." title="Type in a term">
+          <div id="glossaryContainer" style="overflow-y:scroll; height: 400px;"></div>
+          <a href="glossary.html" class="btn btn-primary btn-sm"><b>Full list of terms</b></a>
+        </div>
+      </div>
+
+      <!--
+        ECCN 500 Series:
+          eccn500.png
+      -->
+      <div>
+        <div class="pageIntro jumbotron">
+          <h4 id="itemDescriptionOutput">Your item:</h4>
+          <h4 id="exportDestinationOutput">Export Location:</h4>
+          <h4 id="step">Current Question: Is your item in the USML?</h4>
+          <p id="instructions">Review the information below and submit your answer at the bottom of the page to continue. </p>
+        </div>
+
+        <div class="introInfo card border-primary mb-3">
+          <h2 class="card-header bg-primary text-white" id="infoHeader"></h2>
+          <div class="d-inline-flex">
+            <div class="card-body">
+              <img id="infoImage1" src="pics/usml_cat.png" alt="">
+            </div>
+            <div class="card-body">
+              <p id="infoParagraph1"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class='card border-warning mb-3'>
+        <div class="userInput text-center">
+          <section id="text" class="card-header bg-warning text-white mb-3" style='min-height: 3rem'>
+            <h3 id="introTxt" class="fadeContent">Text that describes what is going on.</h3>
+          </section>
+          <div id="options">
+            <div>
+              <button type="button" id="optionBtn1" class="btn btn-outline-primary fadeContent optionBtn" onclick="setOption('1')">Option 1</button>
+              <button type="button" id="optionBtn2" class="btn btn-outline-primary fadeContent optionBtn" onclick="setOption('2')">Option 2</button>
+              <button type="button" id="optionBtn3" class="btn btn-outline-primary fadeContent optionBtn" onclick="setOption('3')">Option 3</button>
+            </div>
+          </div>
+
+          <button type="button" id="backBtn" class="btn btn-primary submitBtn" onclick="goBack()">Go Back</button>
+          <button type="button" id="submitBtn" class="btn btn-primary submitBtn" onclick="submit()">Next</button>
+
+        </div>
+        </div>
+      </div>
+    </main>
+    <footer class="sticky-footer">
+      <div class="container text-center">
+        <small>This is a footer</small>
+      </div>
+    </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+  </body>
+</html>

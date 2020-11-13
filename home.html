@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-sZG5VVk41YqhJjYXgJFoRVd3d2AdDgy4oyIytQJMGx/Mizz1N+5bgKQBSCGfKQnP" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>Space Advisory Web App</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="info.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body onload="homeStart()">
+    <header>
+      <h1>Export Controls for the Commercial Space Industry</h1>
+    </header>
+    <main class="mainLayout">
+
+      <div class="sidebar">
+        <div class="card text-white bg-primary mb-3" style="padding: 1px;">
+          <a href="home.html" id="navLink"><h4 class="card-header text-center">Start Module</h4></a>
+          <a href="community.html" id="navLink"><h4 class="card-header text-center">Community</h4></a>
+          <a href="glossary.html" id="navLink"><h4 class="card-header text-center">Glossary</h4></a>
+          <input type="text" class="form-control" id="myInput" onkeyup="searchList()" placeholder="Search for terms.." title="Type in a term">
+          <div id="glossaryContainer" style="overflow-y:scroll; height: 450px;"></div>
+          <a href="glossary.html" class="btn btn-primary btn-sm"><b>Full list of terms</b></a>
+        </div>
+      </div>
+
+      <div>
+        <div class="pageIntro jumbotron">
+          <h2 class="display-4">Welcome!</h2>
+          <p class="lead">This website is designed to help you understand what expectations to hold around the export process for the commerical space industry.</p>
+
+          <p class="lead">Understanding how your product or service will be regarded by export law and doing the preliminary work as best as you’re able to might save you a lot of billable time when you do consult with lawyers, much like how clearing the area under your sink saves being billed for time a plumber would have to spend moving your bags before the expert work.</p>
+
+          <p class="lead">At any point please refer to the glossary at the left to provide clarification on any of the terms used.</p>
+        </div>
+
+        <div class="card border-primary mb-3">
+            <h2 class="card-header bg-primary text-white">The Basics</h2>
+            <div class="d-inline-flex">
+              <div class="card-body">
+                <img src="pics/regulationsDiagram.png" height="500px">
+              </div>
+              <div class="card-body">
+                <h3 class="card-title">A few things to keep in mind</h3>
+                <ul id="tips" class="card-text">
+                  <li>This website does not constitute legal advice, it is simpy an organized database of information to help point you in the right direction.</li>
+                  <li>Export controls are designed to not only protect U.S. national security interests, but also allow U.S. companies to engage in commercial activities.</li>
+                  <li>All companies must seek authorization before exporting controlled technologies. This could mean a license, agreement, or license exception.</li>
+                  <li>Most export controls are based on the technical capabilities of a technology, not on its intended use.</li>
+                  <li>Items on the USML (controlled by ITAR) are generally technologies, information, or services that could be used for threatening foreign military purposes.</li>
+                  <li>Items on the CCL (controlled by EAR) are applicable to both commercial and military use.</li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        <div class="card border-primary mb-3">
+          <div class="startInput">
+            <h2 class="card-header bg-primary text-white">Start the module!</h2>
+            <div class="card-body">
+              <p class="card-text">This module will help you classify your product in either the USML or the CCL as well as help you determine what licenses or exceptions you need to apply for in order to export your technology.</p>
+              <p class="card-text">To begin, enter a brief description of your product and its intended destination.</p>
+              <div class="startModuleInput">
+                <label for="itemDescription">Item Description:</label>
+                <input type="text" class="form-control" id="itemDescription">
+                <label for="exportDestination">Destination:</label>
+                <input type="text" class="form-control" id="exportDestination">
+                <!--<a href="index.html"><button type="button" name="button" onclick="startMod()">START</button></a>-->
+                <button type="button" name="button" class="btn btn-secondary" onclick="startMod()">START</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="sticky-footer">
+      <div class="container text-center">
+        <small>This is a footer</small>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
